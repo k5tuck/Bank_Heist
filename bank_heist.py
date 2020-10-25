@@ -28,11 +28,12 @@ class cipher:
 
 code = cipher()
 code_list = code.cipher_code
-print(code_list) # *********  Printing code to be guessed  ************
+#print(code_list) # *********  Printing code to be guessed  ************
 welcome()
 print('''
                               You're holding up the bank.
-                  You need to guess a total of %i digits from (0 - 9).''' %code.length)
+                  The passcode will be total of %i digits long. 
+                You must enter each number, from (0 - 9) one at a time.''' %code.length)
 
 print("\nTotal Attempts: %i" %attempts)
 print("**************************************")
@@ -64,9 +65,9 @@ while valid:
                 break
             if guess == digit:
                 print("-----------------------------")
-                print("Correct!!\n")
+                print("\n\t\tCorrect!!\n")
                 attempts = 5
-                print("Attempts Reset To: %i" %attempts)
+                print("Attempts Reset To: %i\n" %attempts)
                 for num in range(len(player_guesses)):
                     del player_guesses[0]
                 code_list[i] = guess
@@ -89,6 +90,7 @@ while valid:
                         player_guesses.remove(guess)
                         continue
                 player_guesses.append(guess)
+                print("\n\t\tWRONG!!\n")
                 print(("Attempts Remaining: %i" %attempts), "\tGuessed Numbers: ", player_guesses,"\n")
                 print(code_list)
                 print("====================================\n\n")
