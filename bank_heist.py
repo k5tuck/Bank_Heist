@@ -7,7 +7,16 @@ attempts = 5 # Change value to change number of guesses player gets
 def welcome():
     print('''
                                 Welcome to Bank Heist!!
-
+                             _____________________________
+                            |                             |
+                            |   ||||||       |||    |||   |
+                            |   |||  |||     |||    |||   |
+                            |   |||  |||     |||    |||   |
+                            |   ||||||       ||||||||||   |
+                            |   |||  |||     |||    |||   |
+                            |   |||  |||     |||    |||   |
+                            |   |||||||      |||    |||   |
+                            |_____________________________|
 
     Your mission is to rob the Greatest bank Ever to Built!! You will have %i attempts. 
          Get all of your attempts wrong and to jail you go ... For Life.
@@ -23,7 +32,6 @@ def welcome():
 
     print("\nTotal Attempts: %i" %attempts)
     print("**************************************")
-
 def clear(): 
     call('clear' if os.name =='posix' else 'cls')
 
@@ -117,3 +125,15 @@ while valid:
         if i == code.length or attempts == 0 or looping == False:
             continue
     valid = False
+print('''
+        Thanks for playing:
+         ___________________________________________________________________________________________
+        |                                                                                           |
+        |   ||||||                               |||    |||                                     !!  |
+        |   |||  |||                             |||    |||                                     !!  |
+        |   |||  |||                kk           |||    |||                             tt      !!  |
+        |   ||||||                  kk   k       ||||||||||    eee     ii     sssss    tttt     !!  |
+        |   |||  |||  @@    nnnnnn  kk kk        |||    |||   ee ee    ii   sss         tt      !!  |
+        |   |||  ||| @@ @   nn  nn  kkk          |||    |||  eeee      ii       sss     tt          |
+        |   |||||||  @ @@@  nn  nn  kk  kk       |||    |||   eeeeee   ii   ssssss      tt      ::  |
+        |___________________________________________________________________________________________|\n\n''')
