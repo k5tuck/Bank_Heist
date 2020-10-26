@@ -1,4 +1,7 @@
 from random import randint
+from subprocess import call 
+import os 
+
 attempts = 5 # Change value to change number of guesses player gets
 
 def welcome():
@@ -11,8 +14,18 @@ def welcome():
 
                 Are you going to get rich? or Be locked up forever?
          
-                                Let's Get Started!!!
-    ''' %attempts)
+                                Let's Get Started!!!''' %attempts)
+    
+    print('''
+                              You're holding up the bank.
+                  The passcode will be total of %i digits long. 
+                You must enter each number, from (0 - 9) one at a time.''' %code.length)
+
+    print("\nTotal Attempts: %i" %attempts)
+    print("**************************************")
+
+def clear(): 
+    call('clear' if os.name =='posix' else 'cls')
 
 class cipher:
     def __init__(self, length = 6):
@@ -29,7 +42,7 @@ class cipher:
 code = cipher()
 code_list = code.cipher_code
 #print(code_list) # *********  Printing code to be guessed  ************
-welcome()
+
 print('''
                               You're holding up the bank.
                   The passcode will be total of %i digits long. 
@@ -40,7 +53,9 @@ print("**************************************")
 
 # Game
 valid = True
+clear()
 while valid:
+    welcome()
     i = 0
     code_list = ["__" for i in range(code.length)]  #Code_list displays code to screen for user
     player_guesses = []
